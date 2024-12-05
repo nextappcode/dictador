@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ElDictador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #texto {
+            width: 100%;
+            height: 300px;
+            margin: 20px 0;
+            padding: 10px;
+            transition: border-color 0.3s;
+        }
+        #texto.grabando {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+        #texto.procesando {
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+        #estadoDictado {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        #estadoDictado.grabando {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>El_dictador</h1>
+    <div id="estadoDictado">Estado: No grabando</div>
+    <textarea id="texto" placeholder="Tu texto aparecerá aquí..."></textarea>
+    <div>
+        <button id="iniciarDictado">Iniciar Dictado</button>
+        <button id="pausarDictado">Pausar Dictado</button>
+        <button id="limpiar">Limpiar Texto</button>
+        <button id="guardar">Guardar como DOCX</button>
+    </div>
+    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
